@@ -1,4 +1,4 @@
-# Relatude UI Plugin Template
+# Relatude Client Plugin Template
 Please visit developer.relatude.com for more information. 
 Do not hesitate to contact us directly should you have any questions! 
 ## To download dependencies run:
