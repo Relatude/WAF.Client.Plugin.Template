@@ -13,10 +13,12 @@ export class TestBladeStore implements IBladeComponentStore {
     }
 }
 export class TestBlade extends BladeComponent<TestBladeStore> {
+    onClick = () => {
+        alert("Hello!");
+    }
     render() {
         return (
-            <div><Button color={Colors.amber50} text={"Test"} /></div>
-            // <div>TEST</div>
+            <div><Button color={Colors.red} text={"Test"} onClick={this.onClick} /></div>
         );
     }
 }

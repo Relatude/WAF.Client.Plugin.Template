@@ -12,7 +12,7 @@ export function start(container: Element, autoServerAddress: boolean, serverAddr
     config.includeCoreModules = true;
     config.modules = [TestModule];
     return Start.edit(container, config).then(context => {
-        context.automation.login("http://localhost:63021/", "m", "m");
+        // context.automation.login("http://localhost:56755/", "m", "m");
         lastContext = context;
         document.body.style.backgroundColor = "transparent";
     });
