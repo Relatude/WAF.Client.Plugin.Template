@@ -1,11 +1,14 @@
-import { IBladeComponentStore, IBladeStore, IUIContext, BladeComponent } from "@relatude/core";
 import React = require("react");
-import { Colors } from "@relatude/colors";
-import { Button } from "@relatude/core/src/Components/Basic/Button/Button";
-// import { Button } from "@relatude/core/lib/Components/Basic/Button/Button";
+import { BladeComponent, IBladeComponentStore, IBladeStore, IUIContext } from "@relatude/core";
+import { Icons } from "@relatude/icons";
+import { TestComponent } from "./TestComponent";
 
 export class TestBladeStore implements IBladeComponentStore {
-    setBladeDefaults(blade: IBladeStore): void { }
+    setBladeDefaults(blade: IBladeStore): void {
+        blade.name = "My module";
+        blade.iconSvg = Icons.fire;
+        blade.width = 800;
+    }
     context: IUIContext;
     blade: IBladeStore;
     constructor(context: IUIContext) {
@@ -13,12 +16,9 @@ export class TestBladeStore implements IBladeComponentStore {
     }
 }
 export class TestBlade extends BladeComponent<TestBladeStore> {
-    onClick = () => {
-        alert("Hello!");
-    }
     render() {
         return (
-            <div><Button color={Colors.red} text={"Test"} onClick={this.onClick} /></div>
+            <TestComponent context={this.props.context} />
         );
     }
 }

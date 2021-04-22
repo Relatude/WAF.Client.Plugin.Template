@@ -4,7 +4,7 @@ import { TestBladeStore, TestBlade } from "./Blade";
 
 export class TestModule implements IModule {
     private _context: IUIContext;
-    moduleName: string = "Forms";
+    moduleName: string = "Test";
     constructor(context: IUIContext) {
         this._context = context;
     }
@@ -16,8 +16,5 @@ export class TestModule implements IModule {
     onClick = async (pinned: boolean, newWindow: boolean) => {
         let store = new TestBladeStore(this._context);        
         var blade = await this._context.ui.body.openBlade(TestBlade, store, pinned ? "pinnedFirst" : "first");
-        blade.name = "Forms";
-        blade.iconSvg = Icons.fire;
-        blade.width = 600;
     }
 }
